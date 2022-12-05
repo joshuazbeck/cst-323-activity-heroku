@@ -57,22 +57,22 @@
             <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store-form')}}">
                 @csrf
 
-                <h2>Toyota Tacoma</h2>
+                <h2>{{$car->carname}}</h2>
                 <hr>
                 <div class="top-section--car">
-                    <span class="lead">YEAR</span>
+                    <span class="lead">{{$car->year}}</span>
                     <span class="lead"> | </span>
-                    <span class="lead">BRAND</span>
+                    <span class="lead">{{$car->brandname}}</span>
                 </div>
 
                 <div class="middle-section--car">
-                    <span class="lead"><small>WHEELS</small></span>
-                    <span class="lead"><small>MILEAGE</small></span>
-                    <span class="lead"><small>ACCIDENTS</small></span>
+                    <span class="lead"><small>{{$car->wheelnum}} Wheels</small></span>
+                    <span class="lead"><small>{{$car->mileage}} Miles</small></span>
+                    <span class="lead"><small>{{$car->accidentsreported}} Accidents</small></span>
                 </div>
                 <div class="bottom-section--car">
                     <h3><small>Description</small></h3>
-                    <p class="lead description"><small>DESCRIPTION</small></p>
+                    <p class="lead description"><small> {{$car->description}} </small></p>
                 </div>
 
             </form>

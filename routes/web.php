@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [\App\Http\Controllers\ViewCarController::class, 'show']);
-Route::get('/edit/{car}', [\App\Http\Controllers\EditCarController::class, 'show']);
-Route::get('/{car}', [\App\Http\Controllers\DisplayCarController::class, 'show']);
-Route::get('/add', [\App\Http\Controllers\AddCarController::class, 'show']);
+Route::get('/', [\App\Http\Controllers\CarController::class, 'list']);
+Route::get('/edit/{car}', [\App\Http\Controllers\CarController::class, 'edit']);
+Route::get('/{car}', [\App\Http\Controllers\CarController::class, 'view']);
+Route::get('/car/add', [\App\Http\Controllers\CarController::class, 'add']);
+Route::post('/addcar', [\App\Http\Controllers\CarController::class, 'store']);
+Route::get('/update/{id}', [\App\Http\Controllers\CarController::class, 'update']);
+Route::get('/delete/{id}', [\App\Http\Controllers\CarController::class, 'delete']);
 
